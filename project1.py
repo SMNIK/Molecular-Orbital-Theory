@@ -28,3 +28,53 @@ a,b = smp.symbols('a,b') # General symbols so we can use them in our fancy matri
 class Molecule:
     """This class represents a molecule with a Huckel Matrix and associated methods"""
     
+    def __init__(self, name, H, num_pi_electrons, num_carbons, num_double_bonds):
+        self.H = H
+        self.name = name
+        self.num_carbons = num_carbons
+        self.eigenvalues = []
+        self.eigenvectors = []
+        self.normalized_eigenvectors = []
+        self.eigval_eigvect = []     # Associate Eigenvalue with its Eigenvect
+        self.eigval_multiplicity = []
+        self.num_pi_electrons = num_pi_electrons
+        self.deloc_energy = 0.0
+        self.alpha = None
+        self.beta = None
+        self.charge_density = []
+        self.bond_order = []
+        self.num_additional_connections = 0
+        self.con = []
+        self.num_double_bonds = num_double_bonds
+
+        # This is our internal data structure that contains [(eig_value, of electrons)]   
+        self.e_per_energy_lvl = []
+        self.e_per_eigen_vect = []
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
