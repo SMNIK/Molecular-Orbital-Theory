@@ -51,7 +51,26 @@ class Molecule:
         self.e_per_energy_lvl = []
         self.e_per_eigen_vect = []
         
-    
+    def __str__(self):
+        """Creat the string represtation for the molecule"""
+        return "---" + self.name + "--- \n" + str(self.H) + "\n" \
+                + "Charge Density :" + str(self.charge_density) + "\n" \
+                + "Delocalization Energy :" + str(self.deloc_energy) + "\n" \
+                + "Bond Order :" +str(self.bond_order) + "\n"
+                
+    def set_constants(self, al, be):
+        """This function substitutes numeric value in place for Alpha and Beta in the Huckel Matrix"""
+        
+        # Replace our H matrix with numerical values
+        self.H = np.matrix([[al if x ==a else be if x==b else x for x in i] for i in self.H.tolist()])
+        
+        # Store the resonance integral values
+        self.alpha = al
+        self.beta = be
+        
+    def generate_H(self):
+        """generates H matrix for linear carbon chain"""
+        
         
         
         
