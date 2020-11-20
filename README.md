@@ -28,4 +28,10 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
 - In addition the method also enables calculation of <a href="https://en.wikipedia.org/wiki/Charge_density">charge density</a> for each atom in the π framework, the fractional <a href="https://en.wikipedia.org/wiki/Bond_order">bond order</a> between any two atoms, and the overall <a href="https://en.wikipedia.org/wiki/Dipole#Molecular_dipoles">molecular dipole moment</a>.
 
 ***For linear and cyclic systems (with N atoms), general solution exist:***
-- Linear system:  <script type="text/javascript" style="position: initial;">![equation](https:/latex.codecogs.com/gif.latex?{\displaystyle&space;E_{k}=\alpha&space;&plus;2\beta&space;\cos&space;{\frac&space;{(k&plus;1)\pi&space;}{N&plus;1}}\quad&space;(k=0,1,\ldots&space;,N-1)})</script>
+- Linear system:  
+
+![equation](https:/latex.codecogs.com/gif.latex?{\displaystyle&space;E_{k}=\alpha&space;&plus;2\beta&space;\cos&space;{\frac&space;{(k&plus;1)\pi&space;}{N&plus;1}}\quad&space;(k=0,1,\ldots&space;,N-1)})
+
+- Cyclic system:
+
+ ![equation](https://latex.codecogs.com/gif.latex?{\displaystyle&space;E_{k}=\alpha&space;&plus;2\beta&space;\cos&space;{\frac&space;{2k\pi&space;}{N}}\quad&space;(k=0,1,\ldots&space;,\lfloor&space;N/2\rfloor&space;)})
