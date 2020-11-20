@@ -273,13 +273,33 @@ class Molecule:
                 eig_vect_val = (eig_e[0][c].tolist())[0][0]
                 charge_sum += eig_e[1] * (abs(eig_vect_val) ** 2)
                 
+                
             charge_density.append(charge_sum)
             
         self.charge_density = charge_density    #list of charge densities for carbon atoms 1-n
         
     def find_bond_order(self):
         """finds the bond order of molecule, stores as list of values beginning at C1"""
-        
+        bond_order = []
+        for c in range(self.num_carbons - 1 + self.num_additional_connections):
+            # For each carbon atom -1 plus extra bonds between carbos
+            bond_sum = 1.0
+            # Iterate through our eigenvector and their associated number of electrons
+            for eigv_e in self.e_per_eigen_vect:
+                num_elec = eigv_e[1]
+                
+                if c < self.num_carbons - 1:
+                    eigvector_at_c = (eigv_e[0][c].tolist())[0][0]
+                    eigvector_at_c1 = (eigv_e[0][c + 1].tolist())[0][0]
+                    bond_sum += num_elec * eigvector_at_c * eigvector_at_c1
+                else:
+                    first_eigv_index = self.con[c % (self.num_carbons-1)][0]-1
+                    eigv_1 = (eigv_e[0][first_eigv_index].tolist())[0][0]
+                    second_eigv_index = self.con[c % (self.num_carbons-1)][1]-1
+                    eigv_2 = (eigv_e[0][second_eigv_index].tolist())[0][0]
+                    bond_sum += num_elec * eigv_1 * eigv_2
+            bond_order.appeand(bond_sum)
+        self.bond_order = bond_order     # list of change densities for carbon atoms 1-n
         
         
         
