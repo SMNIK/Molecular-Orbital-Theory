@@ -150,9 +150,73 @@ class Molecule:
                 electrons_available -= 2 * multiplicity
             else:
                 self.e_per_energy_lvl.append(tuple([eig_val, electrons_available]))
-                electrons_available -= electrons_available 
+                electrons_available -= electrons_available
         
+        # Count up the number of electronsassociated with each eigenvector by associating it ith the eigenvalue
+        self.e_per_eigen_vect = []
+        e_per_energy_lvl_copy = [x for x in self.e_per_energy_lvl]   # Get a temporary copy to work with
         
+        for eig_set in self.eigval_eigvect:
+            eig_val = eig_set[0]    # Eigenvalue
+            eig_vect = eig_set[1]   # Eigenvectors
+            electrons = 0
+            
+            for electron_index in range(len(e_per_energy_lvl_copy)):
+                if e_per_energy_lvl_copy[electron_index][0] == eig_val:
+                    # We have a match of eigenvalues
+                    if e_per_energy_lvl_copy[electron_index][1] > 2:
+                        # pull out 2
+                        electrons = 2
+                        e_per_energy_lvl_copy[electron_index] = tuple([e_per_energy_lvl_copy[electron_index][0], e_per_energy_lvl_copy[electron_index][1] - 2])
+                    else:
+                        # Pull out as many as it has
+                        electrons = e_per_energy_lvl_copy[electron_index][1]
+                        e_per_energy_lvl_copy[electron_index] = tuple([e_per_energy_lvl_copy[electron_index][0], 0])
+                        
+            self.e_per_eigen_vect.append(tuple([eig_vect, electrons]))
+            
+    def find_nodes(self):
+        """Finds the nodes for the Eigenvector"""
+        def find_nodes_helper(eigenvector):
+            """ A helper function that cunt the number of nodes for a specific eigenvector"""
+            nodes = 0 # Number of Nodes
+            for i in range(len(eigenvector) - 1):
+                if eigenvector[i] * eigenvector[i + 1] < 0:
+                    nodes += 1   # We have a node
+            return nodes
+        
+        result = []
+        for eigvector in self.eigenvectors:
+            result.append(find_nodes_helper(eigvector))
+            
+        # Result = [num_nodes, ...]
+        return result
+            
+    def energy_level_plot(self):
+        """Plots the energy levels and denote spin for the electrons"""
+        assert(self.alpha is not None and self.beta is not None)   # Make sure alpha and beta are defined
+        
+        # get the unicode arrow
+        down_arrow = u'$\u2193$'
+        up_arrow = u'$\u2191$'
+        
+        electrons_used = self.num_pi_electrons
+        max_multiplicity = max(self.eigval_multiplicity, key=itemgetter(1))[1]   # Count the maximum multiplicity
+        
+        # Draw the graphs by iterating through each eigenvalue and its associated multiplicity
+        for eig in self.eigval_multiplicity:
+            eig_val = eig[0]
+            if eig[1] == 1:
+                plt.axhine(eig[0])   # Draw the eigenvalues as lines on the graph
+            else:
+                for i in range(eig[1]):
+                    plt.plot([i, i + 0.95], 2 * [eig_val], color=np.random.rand(3, ))
+                    
+            # Fill up to two electrons per level per line, from bottom up
+            if eig[1] == 1:
+                if electrons_used > 1:
+                    plt.plot(0.2 * max_multiplicity, eig_val, linestyle='none', marker=up_arrow, markersize=15)
+                    
         
         
         
