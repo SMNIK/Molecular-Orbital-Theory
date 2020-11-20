@@ -216,8 +216,34 @@ class Molecule:
             if eig[1] == 1:
                 if electrons_used > 1:
                     plt.plot(0.2 * max_multiplicity, eig_val, linestyle='none', marker=up_arrow, markersize=15)
-                    
+                    plt.plot(0.8 * max_multiplicity, eig_val, linestyle='none', marker=down_arrow, markersize=15)
+                    electrons_used -=2
+                elif electrons_used == 1:
+                    plt.plot(0.2 * max_multiplicity, eig_val, linestyle='none', marker=up_arrow, markersize=15)
+                    electrons_used -= 1
+                else:
+                    pass
+            else:
+                for i in range(eig[1]):
+                    # Add all the up arrows
+                    if electrons_used >= 1:
+                        plt.plot(0.2 + i, eig_val, linestyle='none', marker=up_arrow, markersize=15)
+                        electrons_used -= 1
+                for i in range(eig[1]):
+                    # Add all the up arrows
+                    if electrons_used >= 1:
+                        plt.plot(0.8 + i, eig_val, linestyle='none', marker=up_arrow, markersize=15)
+                        electrons_used -= 1
+                        
+        # Draw the graphs
+        plt.title('Energy Level Plot for ' + str(self.name))
+        plt.xlim(0, max_multiplicity)    # Format the Graph
+        plt.xticks([])   # Hide the x-axes
+        plt.ylabel('ENERGY')
+        plt.show()
         
+    def find_deloc_energy(self):
+        """Calculates the delocalization energy by going through our argumented array and adding up all the energies"""
         
         
         
