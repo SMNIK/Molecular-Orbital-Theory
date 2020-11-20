@@ -11,12 +11,5 @@ From the Schrödinger equation:
 
 ![equation](https://latex.codecogs.com/gif.latex?\hat{H}&space;\vert&space;\Psi_{i}&space;\rangle&space;=&space;E_{i}&space;\vert&space;\Psi_{i}&space;\rangle)
 
-Where H is the Hamiltonian operator,
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>&#x03C8;<!-- ψ --></mi>
-      </mstyle>
-    </mrow>  
-  </semantics>	 is the state vector of the quantum system, and is a constant equal to the energy level of the system (H is not dependent on time explicitly) 
+Where H is the Hamiltonian operator,<semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><mi>&#x03C8;<!-- ψ --></mi></mstyle></mrow></semantics> is the state vector of the quantum system, and is a constant equal to the energy level of the system (H is not dependent on time explicitly) 
 
