@@ -5,9 +5,9 @@
 > <a href="https://chem.libretexts.org/Bookshelves/Inorganic_Chemistry/Map%3A_Inorganic_Chemistry_(Housecroft)/04%3A_Experimental_techniques/4.13%3A_Computational_Methods/4.13C%3A_H%C3%BCckel_MO_Theory#:~:text=The%20H%C3%BCckel%20approximation%20is%20used,the%20the%20%CF%83%2Dbonding%20framework.">chem.libretexts.org</a><br>
 > <a href="http://www.columbia.edu/itc/chemistry/chem-c2407_archive/recitations/huckel.pdf">columbia</a><br>
 > ### Key words
-> ***eigenvector,eigenvalue,state density,boundary condition,Conjugated,***
+> ***eigenvector,eigenvalue,state density,boundary condition,Conjugated***
 
-From the Schrödinger equation:
+From the <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schrödinger</a> equation:
 
 ![equation](https://latex.codecogs.com/gif.latex?\hat{H}&space;\vert&space;\Psi_{i}&space;\rangle&space;=&space;E_{i}&space;\vert&space;\Psi_{i}&space;\rangle)
 
@@ -18,3 +18,8 @@ Since ***Huckel theory*** is a special consideration of molecular orbital theory
 ![equation](https://latex.codecogs.com/gif.latex?{\psi_{i}}=\sum_{i=1}^{n}&space;c_{i}&space;\phi_{i})
 
 So, the Huckel approximtion is used to determine the energies and shapes of the π molecular orbitals. In other words, the Huckel approximation assumes that the electrons in the π bonds "feel" an electrostatic potential due to the entire σ (sigma) bonding framework in the molecule.
+
+### Hückel characteristics
+- it limits itself to <a href="https://en.wikipedia.org/wiki/Conjugated_system">conjugated</a> hydrocarbons.
+- Only <a href="https://en.wikipedia.org/wiki/Pi_bond">π electron</a> molecular orbitals are included because these determine much of the chemical and spectral properties of these molecules. The <a href="https://en.wikipedia.org/wiki/Sigma_bond">σ electrons</a> are assumed to form the framework of the molecule and σ connectivity is used to determine whether two π orbitals interact. However, the orbitals formed by σ electrons are ignored and assumed not to interact with π electrons. This is referred to as σ-π separability. It is justified by the orthogonality of σ and π orbitals in planar molecules. For this reason, the Hückel method is limited to systems that are planar or nearly so.
+- The method is based on applying the <a href="https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)">variational method</a> to <a href="https://en.wikipedia.org/wiki/Linear_combination_of_atomic_orbitals">linear combination of atomic orbitals</a> and making simplifying assumptions regarding the overlap, resonance and Coulomb integrals of these atomic orbitals. It does not attempt to solve the <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schrödinger equation</a>, and neither the functional form of the basis atomic orbitals nor details of the <a href="https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)">Hamiltonian</a> are involved.
