@@ -7,5 +7,5 @@
 
 From the Schrödinger equation:
 
-![equation](<a href="https://www.codecogs.com/eqnedit.php?latex=\hat{H}&space;|\psi_{i}&space;>&space;=&space;E_{i}&space;|\psi_{i}&space;>" target="_blank"><img)
+![equation](https://latex.codecogs.com/gif.latex?\hat{H}&space;|\psi_{i}&space;>&space;=&space;E_{i}&space;|\psi_{i}&space;>)
 
