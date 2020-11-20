@@ -13,7 +13,7 @@ From the Schrödinger equation:
 
 Where H is the Hamiltonian operator,<semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&#x03C8;<!-- ψ --></em></mi></mstyle></semantics> is the state vector of the quantum system, and E is a constant equal to the energy level of the system (H is not dependent on time explicitly).
 
-Since ***Huckel theory*** is a special consideration of molecular orbital theory, the molecular orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mo fence="false" stretchy="false">|</mo><mi mathvariant="bold"><em>&#x03C8;</em><!-- ψ --><sub>i</sub></mi><mo fence="false" stretchy="false"><em>&#x27E9;<!-- ⟩ --></em></mo></mstyle></semantics> can be discribed as a linear combination of the <em>2p<sub>z</sub></em> atomic orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&straightphi;<!-- ψ --></em></mi></mstyle></semantics> at carbon with their corresponding c coefficients:
+Since ***Huckel theory*** is a special consideration of molecular orbital theory, the molecular orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mo fence="false" stretchy="false">|</mo><mi mathvariant="bold">&#x03C8;<!-- ψ --><sub>i</sub></mi><mo fence="false" stretchy="false"><em>&#x27E9;<!-- ⟩ --></em></mo></mstyle></semantics> can be discribed as a linear combination of the <em>2p<sub>z</sub></em> atomic orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&straightphi;<!-- ψ --></em></mi></mstyle></semantics> at carbon with their corresponding c coefficients:
 
 ![equation](https://latex.codecogs.com/gif.latex?{\psi_{i}}=\sum_{i=1}^{n}&space;c_{i}&space;\phi_{i})
 
