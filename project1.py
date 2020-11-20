@@ -96,10 +96,61 @@ class Molecule:
             self.H[con[i][1] - 1, con[i][0] - 1] = b
         self.num_additional_connections += len(con)
         
-    
+    def delete_connections(self, con):
+        """deletes con to the Huckel matrix, takes a list of tuples and
+           inserts zero into H at the specified coordinates
+           con: [[coord1, coord2]...]
+        """
+        for i in range(len(con)):
+            self.H[con[i][0] - 1, con[i][1] - 1] = 0
+            self.H[con[i][1] - 1, con[i][0] - 1] = 0
+        self.num_additional_connections -= len(con)
         
+    def generate_eigen(self):
+        """Finds the eigenvalue and eigenvector for the H matrix"""
+        assert(self.alpha is not None and self.beta is not None)  # We are no longer using symbolic evals
         
+        # REset our arrays
+        self.eigenvalues = []
+        self.eigenvectors = []
+        self.eigval_multiplicity = []
+        self.eigval_eigvect = []
         
+        e_vals, e_vects = lig.eig(self.H)   # Generate using Numpy's eigenvals
+        e_vals = np.around(e_vals, decimals=5)   # Round these eigen values
+        freq_dict = collections.Counter(e_vals)   # Count up of Eigenvalue and their multiplicity
+        
+        # Store the eigenvalues alonf=g with their multiplicities. Note: Eigenvalues in this array is unique
+        self.eigval_multiplicity = sorted(freq_dict.items(), key=lambda x: x[0])
+
+        # Associate each eigenvalues with their eigenvectors. Note: Eigenvalues may repeat in this array
+        for i in range(len(e_vals)):
+            eigenvalue = e_vals[i]
+            mega_tuple = tuple([eigenvalue, e_vects[:, i]])
+            self.eigval_eigvect.append(mega_tuple)
+            
+        # Sort our eigval_eigvect list, in ascending eigenvalue order
+        self.eigval_eigvect.sort(key=lambda x: x[0])
+        
+        # Store just the eigenvalues and the eigenvectors in the appropriate arrays
+        for eig_set in self.eigval_eigvect:
+            self.eigenvalues = eig_set[0]
+            self.eigenvetors.append(eig_set[1].tolist())
+            
+        # Reset the array which will hold the number of electrons per eigenvalue
+        self.e_per_energy_lvl = []
+        
+        # Compile our electron per energy level array
+        electrons_available = self.num_pi_electrons
+        for eig_val_multiplicity in self.eigval_multiplicity:
+            eig_val = eig_val_multiplicity[0]
+            multiplicity = eig_val_multiplicity[1]
+            if electrons_available >= (multiplicity * 2):
+                self.e_per_energy_lvl.append(tuple([eig_val , 2 * multiplicity]))
+                electrons_available -= 2 * multiplicity
+            else:
+                self.e_per_energy_lvl.append(tuple([eig_val, electrons_available]))
+                electrons_available -= electrons_available 
         
         
         
