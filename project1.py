@@ -70,6 +70,41 @@ class Molecule:
         
     def generate_H(self):
         """generates H matrix for linear carbon chain"""
+        N = self.num_carbons
+        H = np.zeros((N, N)).tolist()
+        
+        for i in range(N):
+            H[i][i] = a
+            if i==0:
+                H[i][i+1] = b
+            elif i == N - 1:
+                H[i][i-1] = b
+            else:
+                H[i][i+1] = b
+                H[i][i-1] = b
+                
+        self.H = np.matrix(H)
+        
+    def add_connections(self, con):
+        """adds con to the Huckel matrix, takes a list of lists and inserts
+           beta into H at the specified coordinates
+           con: [[coord1, coord2]...]
+        """
+        self.con = con
+        for i in range(len(con)):
+            self.H[con[i][0] - 1, con[i][1] - 1] = b
+            self.H[con[i][1] - 1, con[i][0] - 1] = b
+        self.num_additional_connections += len(con)
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
