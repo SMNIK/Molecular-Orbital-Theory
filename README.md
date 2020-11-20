@@ -9,5 +9,5 @@
 
 From the Schrödinger equation:
 
-![equation](https://latex.codecogs.com/gif.latex?\hat{H}&space;|\psi_{i}&space;>&space;=&space;E_{i}&space;|\psi_{i}&space;>)
+![equation](https://latex.codecogs.com/gif.latex?\hat{H}&space;\vert&space;\Psi_{i}&space;\rangle&space;=&space;E_{i}&space;\vert&space;\Psi_{i}&space;\rangle)
 
