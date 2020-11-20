@@ -245,6 +245,40 @@ class Molecule:
     def find_deloc_energy(self):
         """Calculates the delocalization energy by going through our argumented array and adding up all the energies"""
         
+        deloc_energy = 0.0
+        for e, num_electrons in self.e_per_energy_lvl:
+            deloc_energy += e * num_electrons
+        # We calculated the total Pi Electron Energy
+        
+        # Subtract Pi Electrons in Isolated Bonds
+        deloc_energy -= (2 * a +2 * b) * self.num_double_bonds
+        
+        if self.alpha is not None and self.beta is not None:
+            # If we have the alpha and beta constant
+            deloc_energy = deloc_energy.subs(a, self.alpha).subs(b, self.beta)
+            
+        self.deloc_energy = smp.N(deloc_energy)    # Set it nicely
+        
+        return self.deloc_energy
+    
+    def find_charge_density(self):
+        """finds the charge density of Pi electrons for each carbon atom in the molecule"""
+        charge_density = []
+        
+        for c in range(self.num_carbons):      # for ech carbon atom
+            charge_sum = 0.0
+            for eig_e in self.e_per_eigen_vect:
+                """Iterate through each eigenvector and its number of electrons
+                   and add up the charge sum according to that formula"""
+                eig_vect_val = (eig_e[0][c].tolist())[0][0]
+                charge_sum += eig_e[1] * (abs(eig_vect_val) ** 2)
+                
+            charge_density.append(charge_sum)
+            
+        self.charge_density = charge_density    #list of charge densities for carbon atoms 1-n
+        
+    def find_bond_order(self):
+        """finds the bond order of molecule, stores as list of values beginning at C1"""
         
         
         
