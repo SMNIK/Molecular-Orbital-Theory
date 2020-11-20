@@ -17,3 +17,4 @@ Since ***Huckel theory*** is a special consideration of molecular orbital theory
 
 ![equation](https://latex.codecogs.com/gif.latex?{\psi_{i}}=\sum_{i=1}^{n}&space;c_{i}&space;\phi_{i})
 
+So, the Huckel approximtion is used to determine the energies and shapes of the π molecular orbitals. In other words, the Huckel approximation assumes that the electrons in the π bonds "feel" an electrostatic potential due to the entire σ (sigma) bonding framework in the molecule.
