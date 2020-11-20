@@ -29,4 +29,5 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
 
 ***For linear and cyclic systems (with N atoms), general solution exist:***
 - Linear system:
+
 ![equation](https://latex.codecogs.com/gif.latex?{\displaystyle&space;E_{k}=\alpha&space;&plus;2\beta&space;\cos&space;{\frac&space;{(k&plus;1)\pi&space;}{N&plus;1}}\quad&space;(k=0,1,\ldots&space;,N-1)})
