@@ -128,7 +128,35 @@ class Graphene(Molecule):
                         else:
                             ypos = yprev + b
         elif row == m + 1:
-            
+            if id == 4*n + 2*(4*n -1) + (row-3)*(2*n +2):
+                if row % 2 == 0:
+                    xpos = xprev - a
+                    ypos = yprev + b
+                else:
+                    xpos = xprev + a
+                    ypos = yprev + b
+            elif prev == 4*n + 2*(4*n -1) + (row-4)*(4*n) + 1:
+                ypos = yprev - b  
+                if row % 2 == 0:
+                    xpos = xprev - a
+                else:
+                    xpos = xprev + a
+            else:
+                if row % 2 == 0:
+                    if prev % 2 == 0:
+                        xpos = xprev - 1
+                        ypos = yprev
+                    else:
+                        xpos = xprev - 2
+                        ypos = yprev
+                    else:
+                        if prev % 2 == 0:
+                            xpos = xprev + 1
+                            ypos = yprev
+                        else:
+                            xpos = xprev + 2
+                            ypos = yprev
+                            
     
     
     
