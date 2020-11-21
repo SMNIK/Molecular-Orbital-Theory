@@ -134,7 +134,7 @@ class Molecule:
         # Store just the eigenvalues and the eigenvectors in the appropriate arrays
         for eig_set in self.eigval_eigvect:
             self.eigenvalues = eig_set[0]
-            self.eigenvetors.append(eig_set[1].tolist())
+            self.eigenvectors.append(eig_set[1].tolist())
             
         # Reset the array which will hold the number of electrons per eigenvalue
         self.e_per_energy_lvl = []
