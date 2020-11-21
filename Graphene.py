@@ -188,8 +188,23 @@ class Graphene(Molecule):
                                 ypos = yprev - b
                             else:
                                 ypos = yprev + b
-                                
-    
+
+        self.prev_id = id
+        return (xpos, ypos)
+    def generate_carbons(self, m, n):
+        """generates the carbon atoms for a graphene molecule of type 'self.name' and of block size mxn"""
+        for i in range(self.num_carbons):
+            self.carbons.append(self.generate_carbon(i+1, m, n, 'find'))
+            
+    def plot_lattice(self, index):
+        """plots the graphene lattice"""
+        x_list = []
+        y_list = []
+        for c in self.carbons:
+            x_list.append(c.pos[0])
+            y_list.append(c.pos[1])
+        plt.scatter(x_list, y_list)
+        for i in range
     
     
     
