@@ -68,3 +68,6 @@ As an example of generation of H matrix for linear carbon chain, look at this:
 
 2. For the basic construction of carbon modulation, we need imagine one of the carbon lattice structure to evaluate the molecule paramiters. It depends to the materials and chanis of molecules that later you will use for. According to the materials that I want to explaine, I consider the [Graphene.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Graphene.py) lattice stracture. So, we extend our molecule class to be able to calculate the various properties of types of Graphene.
 Absolutely, inside the chain, we need to identify the carbons' atoms.
+```jupyter
+self.id = id
+```
