@@ -302,28 +302,3 @@ class Molecule:
         self.bond_order = bond_order     # list of change densities for carbon atoms 1-n
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
