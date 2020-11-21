@@ -68,7 +68,6 @@ class Molecule:
         # Store the resonance integral values
         self.alpha = al
         self.beta = be
-        
     def generate_H(self):
         """generates H matrix for linear carbon chain"""
         N = self.num_carbons
@@ -83,7 +82,6 @@ class Molecule:
             else:
                 H[i][i+1] = b
                 H[i][i-1] = b
-                
         self.H = np.matrix(H)
         
     def add_connections(self, con):

@@ -34,7 +34,7 @@ class Graphene(Molecule):
         position = position_set
         if position_set == 'find':
             position = self.find_position(id, m, n)
-        return Carbon(position[0], position[1], mags, i)
+        return Carbon(position[0], position[1], mags, id)
     
     def zig_zipper(self, m, n):
         """Creates row of linking carbons to wrap zigzag"""
