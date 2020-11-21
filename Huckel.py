@@ -11,7 +11,7 @@ import numpy as np
 from numpy import linalg as lig
 import sympy as smp
 import matplotlib.pyplot as plt
-from perator import itemgetter
+from operator import itemgetter
 import collections
 
 """

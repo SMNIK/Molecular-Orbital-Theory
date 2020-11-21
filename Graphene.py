@@ -29,7 +29,7 @@ class Graphene(Molecule):
         self.current_row = 1    # Stores the row of hexagons that the most recentlygenerated carbon belongs to
         
     def generate_carbon(self, id, m, n, position_set):   # m is number of hexagon rows, n is number of hexagon columns
-    """Mint a new Carbon atom"""
+    #"""Mint a new Carbon atom"""
         mags = [(abs(eig[id - 1][0])**2) for eig in self.eigenvectors]
         position = position_set
         if position_set == 'find':
@@ -115,18 +115,19 @@ class Graphene(Molecule):
                 ypos = yprev - 2*b
                 self.current_row += 1
             elif prev == 4*n + (row-1)*(4*n -1) - 1:
-                    xpos = xprev + a
-                    ypos = yprev + b
+                xpos = xprev + a
+                ypos = yprev + b
+            else:
+                if prev % 2 == 0:
+                    xpos = xprev + 1
+                    ypos = yprev
                 else:
-                    if prev % 2 == 0:
-                        xpos = xprev + 1
-                        ypos = yprev
+                    xpos = xprev + a
+                    if (id+row-1) % 4 == 0:
+                        ypos = yprev - b
                     else:
-                        xpos = xprev + a
-                        if (id+row-1) % 4 == 0:
-                            ypos = yprev - b
-                        else:
-                            ypos = yprev + b
+                        ypos = yprev + b
+                        
         elif row == m + 1:
             if id == 4*n + 2*(4*n -1) + (row-3)*(2*n +2):
                 if row % 2 == 0:
@@ -149,13 +150,13 @@ class Graphene(Molecule):
                     else:
                         xpos = xprev - 2
                         ypos = yprev
+                else:
+                    if prev % 2 == 0:
+                        xpos = xprev + 1
+                        ypos = yprev
                     else:
-                        if prev % 2 == 0:
-                            xpos = xprev + 1
-                            ypos = yprev
-                        else:
-                            xpos = xprev + 2
-                            ypos = yprev
+                        xpos = xprev + 2
+                        ypos = yprev
         else:
             if prev == 4*n + 2*(4*n -1) + (row-3)*(4*n):
                 xpos = xprev
@@ -167,27 +168,27 @@ class Graphene(Molecule):
                     xpos = xprev - a
                 else:
                     xpos = xprev + a
-                elif prev == 4*n + 2*(4*n -1) + (row-4)*(4*n) + 1:
-                    ypos = yprev - b
+            elif prev == 4*n + 2*(4*n -1) + (row-4)*(4*n) + 1:
+                ypos = yprev - b
+                if row % 2 == 0:
+                    xpos = xprev - a
+                else:
+                    xpos = xprev + a
+            else:
+                if prev % 2 == 0:
+                    if row % 2 == 0:
+                        xpos = xprev - 1
+                        ypos = yprev
+                    else:
+                        xpos = xprev + 1
+                        ypos = yprev
+                else:
                     if row % 2 == 0:
                         xpos = xprev - a
-                    else:
-                        xpos = xprev + a
-                else:
-                    if prev % 2 == 0:
-                        if row % 2 == 0:
-                            xpos = xprev - 1
-                            ypos = yprev
+                        if (prev - 1) % 4 ==0:
+                            ypos = yprev - b
                         else:
-                            xpos = xprev + 1
-                            ypos = yprev
-                    else:
-                        if row % 2 == 0:
-                            xpos = xprev - a
-                            if (prev - 1) % 4 ==0:
-                                ypos = yprev - b
-                            else:
-                                ypos = yprev + b
+                            ypos = yprev + b
 
         self.prev_id = id
         return (xpos, ypos)
