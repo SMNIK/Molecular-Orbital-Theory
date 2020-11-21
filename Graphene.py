@@ -211,7 +211,7 @@ class Graphene(Molecule):
                     plt.plot([self.carbons[i].pos[0], self.carbons[j].pos[0]], [self.carbons[i].pos[1], self.carbons[j].pos[1]])
         
         for c in self.carbons:
-            circ = plt.circle((c.pos[0], c.pos[1]), c.psi_magnitudes[index] * 5)
+            circ = plt.Circle((c.pos[0], c.pos[1]), c.psi_magnitudes[index] * 5)
             plt.gcf().gca().add_artist(circ)
             
         # Hide the axes in our plot
