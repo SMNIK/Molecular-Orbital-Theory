@@ -58,7 +58,42 @@ class Graphene(Molecule):
             for i in range(2*n-1):
                 self.carbons[(carb_iter+2+i)].pos = (t.pos[0]+dist, t.pos[1])
                 t = copy.copy(self.carbons[(carb_iter+2+i)])
-                
+                if dist == 2:
+                    dist = 1
+                else:
+                    dist = 2
+                    
+    def find_position(self, id, m, n):
+        """Finds the x, y carbon of a specific carbon atom"""
+        prev = self.prev_id
+        xprev = 0
+        yprev = 0
+        if self.prev_id !=0:
+            xprev = self.carbons[prev-1].pos[0]
+            yprev = self.carbons[prev-1].pos[1]
+        row = self.current_row
+        a = 0.5     # Short leg of 30-60-90 triangle
+        b = float((3**(1/2.0))/2.0)    # long leg of 30-60-90 triangle
+        
+        if row == 1:
+            if prev == 0:
+                xpos = 0.0
+                ypos = 0.0
+            elif prev == 4*n:
+                xpos = xprev - a
+                ypos = yprev - b    #(sqrt(3))/2
+                self.current_row +=1
+            else:
+                if prev % 2 == 0:
+                    xpos = xprev + 1
+                    ypos = yprev
+                else:
+                    xpos = xprev + a
+                    if id % 4 == 0:
+                        ypos = yprev - b
+                    else:
+                        ypos = yprev + b
+                        
     
     
     
