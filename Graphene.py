@@ -169,7 +169,26 @@ class Graphene(Molecule):
                     xpos = xprev + a
                 elif prev == 4*n + 2*(4*n -1) + (row-4)*(4*n) + 1:
                     ypos = yprev - b
-                    
+                    if row % 2 == 0:
+                        xpos = xprev - a
+                    else:
+                        xpos = xprev + a
+                else:
+                    if prev % 2 == 0:
+                        if row % 2 == 0:
+                            xpos = xprev - 1
+                            ypos = yprev
+                        else:
+                            xpos = xprev + 1
+                            ypos = yprev
+                    else:
+                        if row % 2 == 0:
+                            xpos = xprev - a
+                            if (prev - 1) % 4 ==0:
+                                ypos = yprev - b
+                            else:
+                                ypos = yprev + b
+                                
     
     
     
