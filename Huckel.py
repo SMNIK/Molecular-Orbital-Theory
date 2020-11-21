@@ -206,7 +206,7 @@ class Molecule:
         for eig in self.eigval_multiplicity:
             eig_val = eig[0]
             if eig[1] == 1:
-                plt.axhine(eig[0])   # Draw the eigenvalues as lines on the graph
+                plt.axhline(eig[0])   # Draw the eigenvalues as lines on the graph
             else:
                 for i in range(eig[1]):
                     plt.plot([i, i + 0.95], 2 * [eig_val], color=np.random.rand(3, ))
