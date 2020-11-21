@@ -41,5 +41,5 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
 
 # Code configuration
 
-All calculations for obtaining energy and coefficients are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and ....
+All calculations for obtaining energy and coefficients are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Graphene.py)
 Then, for a general view of the various structural states of carbon, ... and ... are used, which we will examine below. 
