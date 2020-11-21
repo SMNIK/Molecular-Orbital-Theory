@@ -297,7 +297,7 @@ class Molecule:
                     second_eigv_index = self.con[c % (self.num_carbons-1)][1]-1
                     eigv_2 = (eigv_e[0][second_eigv_index].tolist())[0][0]
                     bond_sum += num_elec * eigv_1 * eigv_2
-            bond_order.appeand(bond_sum)
+            bond_order.append(bond_sum)
         self.bond_order = bond_order     # list of change densities for carbon atoms 1-n
         
         
