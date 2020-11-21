@@ -204,12 +204,18 @@ class Graphene(Molecule):
             x_list.append(c.pos[0])
             y_list.append(c.pos[1])
         plt.scatter(x_list, y_list)
-        for i in range
-    
-    
-    
-    
-    
-    
-    
+        for i in range(self.num_carbons):
+            for j in range(self.num_carbons):
+                if self.H[i, j] == 1:
+                    plt.plot([self.carbons[i].pos[0], self.carbons[j].pos[0]], [self.carbons[i].pos[1], self.carbons[j].pos[1]])
+        
+        for c in self.carbons:
+            circ = plt.circle((c.pos[0], c.pos[1]), c.psi_magnitudes[index] * 5)
+            plt.gcf().gca().add_artist(circ)
+            
+        # Hide the axes in our plot
+        plt.xticks([])    # hide the x-axes
+        plt.yticks([])
+        plt.title("Molecule Structure for " + self.name + "with energy level " + str(index))
+        plt.show()
     
