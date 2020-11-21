@@ -39,4 +39,7 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
  ***The values of α and β***<br>
  The value of α is the energy of an electron in a 2p orbital, relative to an unbound electron at infinity. This quantity is negative, since the electron is stabilized by being electrostatically bound to the positively charged nucleus. For carbon this value is known to be approximately –11.4 eV. Since Hückel theory is generally only interested in energies relative to a reference localized system, the value of α is often immaterial and can be set to zero without affecting any conclusions. Roughly speaking, β physically represents the energy of stabilization experienced by an electron allowed to delocalize in a π molecular orbital formed from the 2p orbitals of adjacent atoms, compared to being localized in an isolated 2p atomic orbital. As such, it is also a negative number, although it is often spoken of in terms of its absolute value.<hr>
 
- # Modula
+# Code configuration
+
+All calculations for obtaining energy and coefficients are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and ....
+Then, for a general view of the various structural states of carbon, ... and ... are used, which we will examine below. 

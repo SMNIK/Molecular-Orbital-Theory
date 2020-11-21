@@ -16,7 +16,8 @@ import collections
 
 """
 preface:
-    Part 1 - Huckel(H) theory for pi-molecular orbitals.
+    Part 1 
+    Huckel(H) theory for pi-molecular orbitals.
     for a given matrix H, with Alpha diagonals and Beta off-diagonals,
     we will determine the Eigenvalues and Eigenvectors.
     For the Huckel Effective Hamiltonian and use to them to create an energy
