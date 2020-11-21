@@ -16,7 +16,7 @@ zig.add_connections([[41,43],[40,44],[39,45],[38,46],[37,47],[36,48],[43,2],[44,
                      [47,10],[48,11]])
 zig.set_constants(0,1)
 zig.generate_eigen()
-zig.generate_carbons()
+zig.generate_carbons(3,3)
 zig.zig_zipper(3,3)
 zig.find_charge_density()
 zig.find_deloc_energy()
