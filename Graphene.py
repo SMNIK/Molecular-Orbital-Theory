@@ -32,4 +32,39 @@ class Graphene(Molecule):
     """Mint a new Carbon atom"""
         mags = [(abs(eig[id - 1][0])**2) for eig in self.eigenvectors]
         position = position_set
-        
+        if position_set == 'find':
+            position = self.find_position(id, m, n)
+        return Carbon(position[0], position[1], mags, i)
+    
+    def zig_zipper(self, m, n):
+        """Creates row of linking carbons to wrap zigzag"""
+        a = 0.5        # Short leg of 30-60-90 triangle
+        b = float((3**(1/2.0))/2.0)     # long len of 30-60-90 triangle
+        carb_iter = self.num_carbons - (2*n + 1)
+        pull_tab = copy.copy(self.carbons[carb_iter])
+        self.carbons[carb_iter + 1].pos = (pull_tab.pos[0], pull_tab.pos[1]-2*b)
+        t = copy.copy(self.carbons[carb_iter + 1])
+        if m % 2 == 0:
+            dist = 2
+            for i in range(2*n-1):
+                self.carbons[(carb_iter+2+i)].pos = (t.pos[0]-dist, t.pos[1])
+                t = copy.copy(self.carbons[(carb_iter+2+i)])
+                if dist == 2:
+                    dist = 1
+                else:
+                    dist = 2
+        else:
+            dist = 2
+            for i in range(2*n-1):
+                self.carbons[(carb_iter+2+i)].pos = (t.pos[0]+dist, t.pos[1])
+                t = copy.copy(self.carbons[(carb_iter+2+i)])
+                
+    
+    
+    
+    
+    
+    
+    
+    
+    
