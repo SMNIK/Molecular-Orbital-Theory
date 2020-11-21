@@ -46,4 +46,24 @@ Then, for a general view of the various structural states of carbon, ... and ...
 
 
 
-1. The [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) file involves the basic configuration for manipulating the basic structure of our H matrix. The functional operator inside this file works as the pi-molecular orbitals builder. As a Huckel theory for pi-molecular orbitals, for a given Huckel matrix, with Alpha diagonals and Beta off-diagonals, we will determine the Eigenvalues and Eigenvectors. For the Huckel Effective Hamiltonian and use them to create an energy level diagram for the electronic configuration of the molecule. For the short and long leg of the triangle shape, we need two coefficients to use for the matrix elements; So, first generalize the symbols that we can use them in our fancy matrix (here a and b). Molecule class represents	a molecule with a Huckel matrix and associated methodes and inside associate the Eigenvalues. As I said inside the theoretical structure at the first of this repository, Alpha and Beta are mandatory coefficients to calculate the enery of each levels([wikipedia](https://en.wikipedia.org/wiki/H%C3%BCckel_method">wikipedia)
+1. The [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) file involves the basic configuration for manipulating the basic structure of our H matrix. The functional operator inside this file works as the pi-molecular orbitals builder. As a Huckel theory for pi-molecular orbitals, for a given Huckel matrix, with Alpha diagonals and Beta off-diagonals, we will determine the Eigenvalues and Eigenvectors. For the Huckel Effective Hamiltonian and use them to create an energy level diagram for the electronic configuration of the molecule. For the short and long leg of the triangle shape, we need two coefficients to use for the matrix elements; So, first generalize the symbols that we can use them in our fancy matrix (here a and b). Molecule class represents	a molecule with a Huckel matrix and associated methodes and inside associate the Eigenvalues. As I said inside the theoretical structure at the first of this repository, Alpha and Beta are mandatory coefficients to calculate the enery of each levels([wikipedia](https://en.wikipedia.org/wiki/H%C3%BCckel_method">wikipedia))
+As an example of generation of H matrix for linear carbon chain, look at this:
+```python
+    def generate_H(self):
+        N = self.num_carbons
+        H = np.zeros((N, N)).tolist()
+        
+        for i in range(N):
+            H[i][i] = a
+            if i==0:
+                H[i][i+1] = b
+            elif i == N - 1:
+                H[i][i-1] = b
+            else:
+                H[i][i+1] = b
+                H[i][i-1] = b
+        self.H = np.matrix(H)
+```
+However, here, I explained some about the start of the file structure, but if you are enthusiastic for a deeper explanation, you can read extra notes inside the file. For each part, there is a small explanation.
+
+
