@@ -10,8 +10,8 @@ Prt2
 preface: We extend our Molecule class to be able to calculate the various properties of types of Graphene
 """
 
-from Huckel import Molecule, a, b
-import numpy as np
+from Huckel import Molecule
+#import numpy as np
 import matplotlib.pyplot as plt
 import copy
 
