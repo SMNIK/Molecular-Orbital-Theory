@@ -109,7 +109,7 @@ class Molecule:
         """Finds the eigenvalue and eigenvector for the H matrix"""
         assert(self.alpha is not None and self.beta is not None)  # We are no longer using symbolic evals
         
-        # REset our arrays
+        # Reset our arrays
         self.eigenvalues = []
         self.eigenvectors = []
         self.eigval_multiplicity = []
@@ -119,7 +119,7 @@ class Molecule:
         e_vals = np.around(e_vals, decimals=5)   # Round these eigen values
         freq_dict = collections.Counter(e_vals)   # Count up of Eigenvalue and their multiplicity
         
-        # Store the eigenvalues alonf=g with their multiplicities. Note: Eigenvalues in this array is unique
+        # Store the eigenvalues along with their multiplicities. Note: Eigenvalues in this array is unique
         self.eigval_multiplicity = sorted(freq_dict.items(), key=lambda x: x[0])
 
         # Associate each eigenvalues with their eigenvectors. Note: Eigenvalues may repeat in this array
