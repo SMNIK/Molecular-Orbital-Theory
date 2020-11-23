@@ -5,7 +5,7 @@ Created on Sat Nov 21 11:06:29 2020
 @author: masou
 """
 
-from Graphene import Graphene as gra
+from graphene import Graphene as gra
 import numpy as np
 
 arm = gra('Armcahir', np.matrix([]), 42, 42 ,13)

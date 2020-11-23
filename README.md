@@ -1,6 +1,7 @@
 # Molecular Orbital Theory
 > Huckel theory for pi-molecular orbitals
 > ### Theoretical references:
+> Book refrence <a href="http://www.qfa.uam.es/qcomp/libros/l1.pdf">Computational Chemistry and Molecular Modeling</a>(Cha. 4)
 > <a href="https://en.wikipedia.org/wiki/H%C3%BCckel_method">wikipedia</a><br>
 > <a href="https://chem.libretexts.org/Bookshelves/Inorganic_Chemistry/Map%3A_Inorganic_Chemistry_(Housecroft)/04%3A_Experimental_techniques/4.13%3A_Computational_Methods/4.13C%3A_H%C3%BCckel_MO_Theory#:~:text=The%20H%C3%BCckel%20approximation%20is%20used,the%20the%20%CF%83%2Dbonding%20framework.">chem.libretexts.org</a><br>
 > <a href="http://www.columbia.edu/itc/chemistry/chem-c2407_archive/recitations/huckel.pdf">columbia</a><br>
@@ -41,8 +42,8 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
 
 # Code configuration
 
-All calculations for obtaining energy and coefficients are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Graphene.py).<br>
-Then, for a general view of the various structural states of carbon, ... and ... are used, which we will examine below. 
+All calculations for obtaining energy and coefficients (Molecule and a and b) are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and [graphene.py](https://github.com/SMNIK/Molecular-Orbital-Theory/graphene.py).<br>
+Then, for a general view of the various structural states and lattice energy connections of carbon, [Zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Zigzag.py) and ... are used, which we will examine below. 
 
 
 
