@@ -81,3 +81,8 @@ class Graphene(Molecule):
         self.prev_id = 0
         self.current_row = 1
 ```
+For the generating graphene, the molecule shape is hexagonal, for this, by considering two elements as the rows and columns and then create the linking carbons lines, you could shape your hexagon structure of graphene. Look at the code for more information.
+
+3. In the third part I use nanotube for testing the Huckel and Graphene codes. Besides, for calculating the charge density and delocalization energy. First, the nanotube needs armchair for correct connections between atoms. As you see inside the [testing-nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-nanotube.py) file, for nanotube, the structure will be closed after 42 atoms. For more cells you could generate more connections. Finaly, for this part you could plot them and print the results.
+
+![image](./image/testing-nanotube.jpg)
