@@ -91,4 +91,4 @@ For the generating graphene, the molecule shape is hexagonal, for this, by consi
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-zigzag.png)
 
-5. And for the last part, you can choose one of the molecule structures from [molecules](https://github.com/SMNIK/Molecular-Orbital-Theory/molecules)
+5. And for the last part, you can choose one of the molecule structures from [molecules](https://github.com/SMNIK/Molecular-Orbital-Theory/tree/master/molecules)
