@@ -85,4 +85,4 @@ For the generating graphene, the molecule shape is hexagonal, for this, by consi
 
 3. In the third part I use nanotube for testing the Huckel and Graphene codes. Besides, for calculating the charge density and delocalization energy. First, the nanotube needs armchair for correct connections between atoms. As you see inside the [testing-nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-nanotube.py) file, for nanotube, the structure will be closed after 42 atoms. For more cells you could generate more connections. Finaly, for this part you could plot them and print the results.
 
-![image](./image/testing-nanotube.jpg)
+![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-nanotube.png)
