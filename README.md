@@ -90,3 +90,5 @@ For the generating graphene, the molecule shape is hexagonal, for this, by consi
 4. Now for testing the zigzag connections of carbos' atoms, I prepaired the file [testing-zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-zigzag.py) which include the zigzag connections and plots (that I left the seperate files for who wants to change).
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-zigzag.png)
+
+5. And for the last part, you can choose one of the molecule structures from [molecules](https://github.com/SMNIK/Molecular-Orbital-Theory/molecules)
