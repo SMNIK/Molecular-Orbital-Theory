@@ -42,8 +42,8 @@ So, the Huckel approximtion is used to determine the energies and shapes of the 
 
 # Code configuration
 
-All calculations for obtaining energy and coefficients (Molecule and a and b) are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Huckel.py) and [graphene.py](https://github.com/SMNIK/Molecular-Orbital-Theory/graphene.py).<br>
-Then, for a general view of the various structural states and lattice energy connections of carbon, [Zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Zigzag.py), [Armchair.py](https://github.com/SMNIK/Molecular-Orbital-Theory/Armchair.py), and [nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/nanotube.py) are used, which we will examine below.
+All calculations for obtaining energy and coefficients (Molecule and a and b) are expressed in two general coding structures [Huckel.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/Huckel.py) and [graphene.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/Graphene.py).<br>
+Then, for a general view of the various structural states and lattice energy connections of carbon, [Zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/Zigzag.py), [Armchair.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/Armchair.py), and [nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/nanotube-graphs.py) are used, which we will examine below.
 
 
 
