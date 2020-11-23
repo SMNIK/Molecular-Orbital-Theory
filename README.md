@@ -83,6 +83,10 @@ class Graphene(Molecule):
 ```
 For the generating graphene, the molecule shape is hexagonal, for this, by considering two elements as the rows and columns and then create the linking carbons lines, you could shape your hexagon structure of graphene. Look at the code for more information.
 
-3. In the third part I use nanotube for testing the Huckel and Graphene codes. Besides, for calculating the charge density and delocalization energy. First, the nanotube needs armchair for correct connections between atoms. As you see inside the [testing-nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-nanotube.py) file, for nanotube, the structure will be closed after 42 atoms. For more cells you could generate more connections. Finaly, for this part you could plot them and print the results.
+3. In the third part I use nanotube for testing the Huckel and Graphene codes. Besides, for calculating the charge density and delocalization energy. First, the nanotube needs armchair for correct connections between atoms. As you see inside the [testing-nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-nanotube.py) file, for nanotube, the structure will be closed after 42 atoms. For more cells you could generate more connections. Finaly, for this part you could plot them and print the results. However, I left the seperates files of nanotube for who wants to change them.
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-nanotube.png)
+
+4. Now for testing the zigzag connections of carbos' atoms, I prepaired the file [testing-zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/testing-zigzag.py) which include the zigzag connections and plots (that I left the seperate files for who wants to change).
+
+![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-zigzag.png)
