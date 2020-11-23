@@ -6,7 +6,7 @@ Created on Sat Nov 21 12:02:07 2020
 """
 
 import numpy as np
-from Huckel import Molecule
+from Molecule import Molecule
 
 benzene = Molecule('Benzene', np.matrix([]), 6, 6, 3)
 benzene.generate_H()

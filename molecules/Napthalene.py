@@ -6,7 +6,7 @@ Created on Sat Nov 21 12:31:25 2020
 """
 
 import numpy as np
-from Huckel import Molecule
+from Molecule import Molecule
 
 napth = Molecule('Napthalene', np.matrix([]), 10, 10, 5)
 napth.generate_H()

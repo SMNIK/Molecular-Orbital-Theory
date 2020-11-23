@@ -6,7 +6,7 @@ Created on Sat Nov 21 12:36:57 2020
 """
 
 import numpy as np
-from Huckel import Molecule
+from Molecule import Molecule
 
 tol = Molecule('Toluene', np.matrix([]), 7, 7, 3)
 tol.generate_H()

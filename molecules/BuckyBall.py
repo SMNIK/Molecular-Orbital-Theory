@@ -6,7 +6,7 @@ Created on Sat Nov 21 12:12:38 2020
 """
 
 import numpy as np
-from Huckel import Molecule
+from Molecule import Molecule
 
 bucky = Molecule('Buckminsterfullerence', np.matrix([]), 60, 60, 30)
 bucky.generate_H()
