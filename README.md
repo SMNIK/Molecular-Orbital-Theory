@@ -87,7 +87,8 @@ class Graphene(Molecule):
 ```
 For the generating graphene, the molecule shape is hexagonal, for this, by considering two elements as the rows and columns and then create the linking carbons lines, you could shape your hexagon structure of graphene. Look at the code for more information.
 
-3. In the third part I use nanotube for testing the Huckel and Graphene codes. Besides, for calculating the charge density and delocalization energy. First, the nanotube needs armchair for correct connections between atoms. As you see inside the [testing-nanotube.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing-nanotube.py) file, for nanotube, the structure will be closed after 42 atoms. For more cells you could generate more connections. Finaly, for this part you could plot them and print the results. However, I left the seperates files of nanotube for who wants to change them.
+3. In the third part, I use the [testing.ipynb](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) to test the Molecule and show that there is not any bug in my functions' structures. Besides, for calculating the charge density and delocalization energy, the testing program helps you to modified the bugs. For more deep testing and recognizing better this course structure you could test all functions of other files, but be careful of the connection between files and their orders: First, the nanotube needs armchair for correct connections between atoms.
+For the [testing.ipynb](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) file, I used the ...
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-nanotube.png)
 
@@ -95,7 +96,7 @@ For the generating graphene, the molecule shape is hexagonal, for this, by consi
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-zigzag.png)
 
-5. And for the last part, you can choose one of the molecule structures from [molecules](https://github.com/SMNIK/Molecular-Orbital-Theory/tree/master/molecules) to calculate not only the charge density but also delocalization energy and bond order. This is the test version of Huckel.py for different moleculs. 
+5. And for the last part, you can choose one of the molecule structures from [molecules](https://github.com/SMNIK/Molecular-Orbital-Theory/tree/master/molecules) to calculate not only the charge density but also delocalization energy and bond order. This is the test version of Molecule.py for different moleculs. 
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/Toluene.png)
 
