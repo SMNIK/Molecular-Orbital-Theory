@@ -33,7 +33,7 @@ from Benzene import benzene
 
 class Test(unittest.TestCase):
     def test_1(self):
-        self.assertAlmostEqual(benzene.name, "Benzene")
+        self.assertAlmostEqual(benzene.name, 0)
 
 
 if __name__ == "__main__":

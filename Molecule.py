@@ -54,6 +54,10 @@ class Molecule:
         self.e_per_energy_lvl = []
         self.e_per_eigen_vect = []
 
+        if name != str:
+            raise TypeError(
+                "The name that you entered is not correct, put it inside quotation as a string or be careful to write the correct name")
+
     def __str__(self):
         """Creat the string represtation for the molecule"""
         return "---" + self.name + "--- \n" + str(self.H) + "\n" \
