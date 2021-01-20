@@ -17,7 +17,7 @@ benzene.find_deloc_energy()
 benzene.energy_level_plot()
 benzene.find_charge_density()
 benzene.find_bond_order()
-#print(benzene)
+print(benzene)
 
-# def getBenzen():
-#     return benzene
+def getBenzen():
+    return benzene
