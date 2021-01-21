@@ -33,10 +33,10 @@ from Benzene import benzene
 
 class Test(unittest.TestCase):
     def test_1(self):
-        self.assertAlmostEqual(benzene.name, 0)
-        self.assertEqual(benzene.name, True)
-
+        self.assertAlmostEqual(benzene.name, "Benzene")
+        
+    def test_type(self):
+        self.assertRaises(TypeError, benzene.name, True)
 
 if __name__ == "__main__":
     unittest.main()
-
