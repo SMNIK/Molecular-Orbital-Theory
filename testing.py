@@ -25,13 +25,13 @@ class Test(unittest.TestCase):
         assert Molecule.__str__
         assert Molecule.__init__
 
-    def test_1(self):
+    def test_name(self):
         self.assertAlmostEqual(benzene.name, "Benzene")
         
-    def test_type(self):
+    def test_type_1(self):
         self.assertRaises(TypeError, benzene.name, True)
         
-    def test_2(self):
+    def test_deloc_energy_value(self):
         self.assertAlmostEqual(benzene.deloc_energy, -2.00000001)
         
     def test_type_2(self):
