@@ -9,34 +9,33 @@ import numpy as np
 from Molecule import Molecule
 from Benzene import benzene
 
-# # class Test(unittest.TestCase):
-#     # def test_1(self):
-#     #     assert Molecule
-#     #     assert Molecule.find_bond_order
-#     #     assert Molecule.find_deloc_energy
-#     #     assert Molecule.find_charge_density
-#     #     assert Molecule.find_nodes
-#     #     assert Molecule.set_constants
-#     #     assert Molecule.generate_eigen
-#     #     assert Molecule.generate_H
-#     #     assert Molecule.energy_level_plot
-#     #     assert Molecule.delete_connections
-#     #     assert Molecule.add_connections
-#     #     assert Molecule.__str__
-#     #     assert Molecule.__init__
-
-#     # def test_2(self):
-# print("B.c_d: ", benzene.charge_density)
-# print("a.f_d_e: ", benzene.find_deloc_energy())
-# print("a.f_c_d: ", benzene.find_charge_density())
-# print("a.f_b_o: ", benzene.find_bond_order())
-
 class Test(unittest.TestCase):
+    def test_0(self):
+        assert Molecule
+        assert Molecule.find_bond_order
+        assert Molecule.find_deloc_energy
+        assert Molecule.find_charge_density
+        assert Molecule.find_nodes
+        assert Molecule.set_constants
+        assert Molecule.generate_eigen
+        assert Molecule.generate_H
+        assert Molecule.energy_level_plot
+        assert Molecule.delete_connections
+        assert Molecule.add_connections
+        assert Molecule.__str__
+        assert Molecule.__init__
+
     def test_1(self):
         self.assertAlmostEqual(benzene.name, "Benzene")
         
     def test_type(self):
         self.assertRaises(TypeError, benzene.name, True)
+        
+    def test_2(self):
+        self.assertAlmostEqual(benzene.deloc_energy, -2.00000001)
+        
+    def test_type_2(self):
+        self.assertRaises(TypeError, benzene.deloc_energy, True)
 
 if __name__ == "__main__":
     unittest.main()

@@ -283,6 +283,12 @@ class Molecule:
         self.deloc_energy = smp.N(deloc_energy)    # Set it nicely
 
         return self.deloc_energy
+    
+        if type(deloc_energy) not in [int, float]:
+            raise TypeError("The radius must be a non-negative real number.")
+
+        if deloc_energy > 10:
+            raise ValueError("The radius cannot be negative.")
 
     def find_charge_density(self):
         """finds the charge density of Pi electrons for each carbon atom in the molecule"""
