@@ -14,7 +14,8 @@ From the <a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schr�
 
 Where H is the Hamiltonian operator,<semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&#x03C8;<!-- ψ --></em></mi></mstyle></semantics> is the state vector of the quantum system, and E is a constant equal to the energy level of the system (H is not dependent on time explicitly).
 
-Since ***Huckel theory*** is a special consideration of molecular orbital theory, the molecular orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mo fence="false" stretchy="false">|</mo><mi mathvariant="bold">&#x03C8;<!-- ψ --><sub>i</sub></mi><mo fence="false" stretchy="false"><em>&#x27E9;<!-- ⟩ --></em></mo></mstyle></semantics> can be discribed as a linear combination of the <em>2p<sub>z</sub></em> atomic orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&straightphi;<!-- ψ --></em></mi></mstyle></semantics> at carbon with their corresponding c coefficients:
+Since ***Huckel theory*** is a special consideration of molecular orbital theory, the molecular orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mo fence="false" stretchy="false">|</mo><mi mathvariant="bold">&#x03C8;<!-- ψ --><sub>i</sub></mi><mo fence="false" stretchy="false"><em>&#x27E9;<!-- ⟩ --></em></mo></mstyle></semantics> can 
+ discribed as a linear combination of the <em>2p<sub>z</sub></em> atomic orbitals <semantics><mstyle displaystyle="true" scriptlevel="0"><mi><em>&straightphi;<!-- ψ --></em></mi></mstyle></semantics> at carbon with their corresponding c coefficients:
 
 ![equation](https://latex.codecogs.com/gif.latex?{\psi_{i}}=\sum_{i=1}^{n}&space;c_{i}&space;\phi_{i})
 
@@ -87,12 +88,12 @@ class Graphene(Molecule):
 ```
 For the generating graphene, the molecule shape is hexagonal, for this, by considering two elements as the rows and columns and then create the linking carbons lines, you could shape your hexagon structure of graphene. Look at the code for more information.
 
-3. In the third part, I use the [testing.ipynb](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) to test the Molecule and show that there is not any bug in my functions' structures. Besides, for calculating the charge density and delocalization energy, the testing program helps you to modified the bugs. For more deep testing and recognizing better this course structure you could test all functions of other files, but be careful of the connection between files and their orders: First, the nanotube needs armchair for correct connections between atoms.
-For the [testing.ipynb](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) file, I used the unittest library.
+3. In the third part, I use the [testing.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) to test the Molecule and show that there is not any bug in my functions' structures. Besides, for calculating the charge density and delocalization energy, the testing program helps you to modified the bugs. For more deep testing and recognizing better this course structure you could test all functions of other files, but be careful of the connection between files and their orders: First, the nanotube needs armchair for correct connections between atoms.
+For the [testing](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing.ipynb) file, I used the unittest and hypothesis libraries. Moreover, I wrote some notes about testing file that you coild see from [test report](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/test-report.ipynb).
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-nanotube.png)
 
-4. Now for testing the zigzag connections of carbos' atoms, I prepaired the file [testing-zigzag.py](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/testing-zigzag.py) which include the zigzag connections and plots (that I left the seperate files for who wants to change).
+4. Now for showing the zigzag connections of carbos' atoms, I prepaired the below plots, which are include the zigzag connections and their energy levels (that I left the seperate files for who wants to change).
 
 ![image](https://github.com/SMNIK/Molecular-Orbital-Theory/blob/master/images/testing-zigzag.png)
 
