@@ -36,6 +36,40 @@ class Test(unittest.TestCase):
         
     def test_type_2(self):
         self.assertRaises(TypeError, benzene.deloc_energy, True)
-
+        
 if __name__ == "__main__":
     unittest.main()
+
+#%%
+
+import Benzene
+from hypothesis import strategies as st
+from hypothesis import settings
+from hypothesis import given
+
+
+@given(beta=st.integers(-1, Benzene.benzene.beta))
+@settings(max_examples=1)
+def test_beta(beta):
+    model = Benzene.benzene.beta
+    assert model == -1
+    abs_model = np.abs(model)
+    assert abs_model.all() == 1
+
+@given(alpha=st.integers(0, Benzene.benzene.alpha))
+@settings(max_examples=1)
+def test_alpha(alpha):
+    model = Benzene.benzene.alpha
+    assert model == 0
+    abs_model = np.abs(model)
+    assert abs_model.all() == 0
+
+if __name__ == "main":
+    pass
+
+
+
+
+
+
+
