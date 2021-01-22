@@ -31,7 +31,7 @@ class Test(unittest.TestCase):
         assert Molecule.__init__
 
     def test_name(self):
-        self.assertAlmostEqual(benzene.name, "Benzene")
+        self.assertAlmostEqual(benzene.name, 'Benzene')
 
     def test_type_1(self):
         self.assertRaises(TypeError, benzene.name, True)
@@ -50,10 +50,18 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(benzene.eigval_multiplicity, [
                                (-2.0, 1), (-1.0, 2), (1.0, 2), (2.0, 1)])
 
+    def test_benzene(self):
+        ben = Molecule("Benzene", np.matrix([]), 6, 6, 3)
+        self.assertEqual(ben.name, 'Benzene')
+        self.assertEqual(benzene.__str__(), str(Benzene.benzene))
+        self.assertEqual(benzene.find_deloc_energy(), -2)
+
+        benzene.name = 'Butadiene'
+        self.assertEqual(benzene.__str__(), str(Benzene.benzene))
+
 
 if __name__ == "__main__":
     unittest.main()
-
 # %%
 
 
