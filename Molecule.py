@@ -56,7 +56,17 @@ class Molecule:
 
         if type(name) not in [str]:
             raise TypeError("The name that you entered is not correct, put it inside quotation as a string or be careful to write the correct name")
+        
+        if type(num_pi_electrons) not in [int]: 
+            raise TypeError("The num_pi_electrons that you entered is not correct, the num_pi_electrons should be integers")
+        
+        if type(num_carbons) not in [int]: 
+            raise TypeError("The num_carbons that you entered is not correct, the num_carbons should be integers")
+        
+        if type(num_double_bonds) not in [int]: 
+            raise TypeError("The num_double_bonds that you entered is not correct, the num_double_bonds should be integers")
 
+        
     def __str__(self):
         """Creat the string represtation for the molecule"""
         return "---" + self.name + "--- \n" + str(self.H) + "\n" \
