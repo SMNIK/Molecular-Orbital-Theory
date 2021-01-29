@@ -122,8 +122,8 @@ class TestButadiene(unittest.TestCase):
 
     def test_butadiene_str(self):
         print('test the __str__ output of butadiene')
-        first = self.benzene.__str__()
-        second = str(self.benzene)
+        first = self.butadiene.__str__()
+        second = str(self.butadiene)
         self.assertEqual(first, second)
     
     def test_butadiene_coefficients(self):
