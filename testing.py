@@ -51,15 +51,20 @@ class TestBenzene(unittest.TestCase):
         
     def test_benzene_lists(self):
         print('test the coefficients lists of benzene')
+        
         density = [1.02, 0.9, 1.08, 1.02, 0.9, 1.08]
+        order = [1.56, 1.65, 1.77, 1.56, 1.65, 1.77]
         for n in range(len(self.benzene.charge_density)):
             first = self.benzene.charge_density[n]
             second = density[n]
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
             self.assertAlmostEqual(first, second, None, message, delta)
-        
-        
+            
+            bond = self.benzene.bond_order[n]
+            second1 = order[n]
+            message0 = 'The bond order elements for testing are not almost equal'
+            self.assertAlmostEqual(bond, second1, None, message0, delta)
         
         
         
