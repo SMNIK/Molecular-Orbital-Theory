@@ -36,6 +36,11 @@ class TestBenzene(unittest.TestCase):
     def tearDown(cls):
         print('tear down\n')
         
+    def test_benzene_str(self):
+        print('test the __str__ output')
+        first = self.bnzene.__str__
+        second = str(self.benzene)
+        self.assertEqual(first, second)
         
         
         
@@ -44,11 +49,7 @@ class TestBenzene(unittest.TestCase):
         
         
         
-        
-        
-        
-        
-        
-            
-
-            
+if __name__ == '__main__':
+    unittest.main
+    
+    
