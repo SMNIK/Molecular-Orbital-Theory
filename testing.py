@@ -32,6 +32,22 @@ class TestBenzene(unittest.TestCase):
         self.benzene.find_charge_density()
         self.benzene.find_bond_order()
         
+    @classmethod
+    def tearDown(cls):
+        print('tear down\n')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
             
 
