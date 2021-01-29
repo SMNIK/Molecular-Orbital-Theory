@@ -10,7 +10,6 @@ from Molecule import Molecule, a, b
 
 butadiene_H = np.matrix([[a, b, 0, 0], [b, a, b, 0],[0, b, a, b], [0, 0, b, a]])
 butadiene = Molecule('Butadiene', butadiene_H, 4, 4, 2)
-
 butadiene.set_constants(0, -1)
 butadiene.generate_eigen()
 butadiene.find_deloc_energy()
