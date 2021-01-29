@@ -9,6 +9,9 @@ import numpy as np
 import unittest
 from Molecule import Molecule, a, b
 
+""" For testing the Molecule file which is the core of this program,
+I used the Benzene and Butadiene molecules data to test the outputs of 
+Molecule's functions """
 
 class TestBenzene(unittest.TestCase):
 
@@ -57,17 +60,18 @@ class TestBenzene(unittest.TestCase):
         # creat a loop to check each elements and decrease the decimal parts or Approximate comparison
         density = [1.02, 0.9, 1.08, 1.02, 0.9, 1.08]
         order = [1.56, 1.65, 1.77, 1.56, 1.65, 1.77]
-        for n in range(len(self.benzene.charge_density)):
-            first = self.benzene.charge_density[n]
-            second = density[n]
+        for s in range(len(self.benzene.charge_density)):
+            first = self.benzene.charge_density[s]
+            second = density[s]
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
             self.assertAlmostEqual(first, second, None, message, delta)
 
-            bond = self.benzene.bond_order[n]
-            second0 = order[n]
+            bond = self.benzene.bond_order[s]
+            second0 = order[s]
             message0 = 'The bond order elements for testing are not almost equal'
             self.assertAlmostEqual(bond, second0, None, message0, delta)
+        
         # this part is a 6*6 matrix or list inside other list so we break it to the basic elements and compare
         eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447], [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
         for m in range(len(self.benzene.eigenvectors)):  # read each list separately
@@ -132,36 +136,58 @@ class TestButadiene(unittest.TestCase):
     def test_butadiene_lists(self):
         print('test the coefficients lists of butadiene')
         density = [1, 1, 1, 1]
-        for n in range(len(self.butadiene.charge_density)):
-            first = self.butadiene.charge_density[n]
-            second = density[n]
+        for d in range(len(self.butadiene.charge_density)):
+            first = self.butadiene.charge_density[d]
+            second = density[d]
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
             self.assertAlmostEqual(first, second, None, message, delta)
         
         bond = [1.89, 1.45, 1.89]
-        for n in range(len(self.butadiene.bond_order)):
-            first = self.butadiene.bond_order[n]
-            second = bond[n]
+        for z in range(len(self.butadiene.bond_order)):
+            first = self.butadiene.bond_order[z]
+            second = bond[z]
             delta = 0.1
             message = 'The bond_order elements for testing are not almost equal'
             self.assertAlmostEqual(first, second, None, message, delta)
         
         eigenvectors = [[[0.372], [0.602], [0.602], [0.372]], [[-0.602], [-0.372], [0.372], [0.602]], [[0.602], [-0.372], [-0.372], [0.602]], [[-0.372], [0.602], [-0.602], [0.372]]]
-        for m in range(len(self.butadiene.eigenvectors)):  # read each list separately
-            vectors = self.butadiene.eigenvectors[m]
-            second1 = eigenvectors[m]
-            for i in range(len(vectors)):  # read first deep elements
-                vec = vectors[i]
-                sec = second1[i]
+        for v in range(len(self.butadiene.eigenvectors)):  # read each list separately
+            vectors = self.butadiene.eigenvectors[v]
+            second1 = eigenvectors[v]
+            for k in range(len(vectors)):  # read first deep elements
+                vec = vectors[k]
+                sec = second1[k]
                 # convert the separated lists to the integers elements
-                for h in range(len(vec)):
-                    v = vec[h]
-                    s = sec[h]
+                for o in range(len(vec)):
+                    v = vec[o]
+                    s = sec[o]
                     delta1 = 0.01
                     message1 = 'The eigenvectors elements for testing are not almost equal'
                     self.assertAlmostEqual(v, s, None, message1, delta1)
+
+# to have the separate elements of tuple inside a list we could act like below
+        test = [(-1.62, 2), (-0.62, 2), (0.62, 0), (1.62, 0)]
+        for l in range(len(self.butadiene.e_per_energy_lvl)):
+            first = self.butadiene.e_per_energy_lvl[l]
+            second = test[l]
+            for x in range(len(first)):
+                f = first[x]
+                s = second[x]
+            delta = 0.01
+            message = "first and second are not almost equal."
+            self.assertAlmostEqual(f,s, None, message, delta)
         
+        test = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
+        for z in range(len(self.butadiene.eigval_multiplicity)):
+            first = self.butadiene.eigval_multiplicity[z]
+            second = test[z]
+            for g in range(len(first)):
+                f = first[g]
+                s = second[g]
+            delta = 0.01
+            message = "first and second are not almost equal."
+            self.assertAlmostEqual(f,s, None, message, delta)
         
 if __name__ == '__main__':
     unittest.main
