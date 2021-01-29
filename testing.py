@@ -68,16 +68,20 @@ class TestBenzene(unittest.TestCase):
         
         eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447], [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
         for m in range(len(self.benzene.eigenvectors)):
-            for i in range(len(self.benzene.eigenvectors[m])):
-                vectors = self.benzene.eigenvectors[m]
-                second1 = eigenvectors[m]
-                
-                delta1 = 0.01
-                message1 = 'The eigenvectors elements for testing are not almost equal'
-                self.assertAlmostEqual(vectors, second1, None, message1, delta1)
+            vectors = self.benzene.eigenvectors[m]
+            second1 = eigenvectors[m]
+            for i in range(len(vectors)):
+                vec = vectors[i]
+                sec = second1[i]
+                for h in range(len(vec)):
+                    v = vec[h]
+                    s = sec[h]
+                    delta1 = 0.01
+                    message1 = 'The eigenvectors elements for testing are not almost equal'
+                    self.assertAlmostEqual(v, s, None, message1, delta1)
             
-        self.asserttEqual(self.benzene.con, [[1, 6]])
-        self.assertEqual((self.benzene.e_per_energy_lvl, [(-2.0, 2), (-1.0, 4), (1.0, 0), (2.0, 0)]))
+        self.assertEqual(self.benzene.con, [[1, 6]])
+        self.assertEqual(self.benzene.e_per_energy_lvl, [(-2.0, 2), (-1.0, 4), (1.0, 0), (2.0, 0)])
         
         
         
