@@ -20,7 +20,7 @@ class TestBenzene(unittest.TestCase):
         print('tear down class')
         
     def setUp(self):
-        print('setUp')
+        print('set up')
         
         self.benzene = Molecule("Benzene", np.matrix([]), 6, 6, 3)
         self.benzene.generate_H()
@@ -51,7 +51,13 @@ class TestBenzene(unittest.TestCase):
         
     def test_benzene_lists(self):
         print('test the coefficients lists of benzene')
-        
+        density = [1.02, 0.9, 1.08, 1.02, 0.9, 1.08]
+        for n in range(len(self.benzene.charge_density)):
+            first = self.benzene.charge_density[n]
+            second = density[n]
+            delta = 0.1
+            message = 'The charge density elements for testing are not almost equal'
+            self.assertAlmostEqual(first, second, None, message, delta)
         
         
         
