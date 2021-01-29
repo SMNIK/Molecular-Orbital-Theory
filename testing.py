@@ -38,9 +38,19 @@ class TestBenzene(unittest.TestCase):
         
     def test_benzene_str(self):
         print('test the __str__ output')
-        first = self.bnzene.__str__
+        first = self.benzene.__str__()
         second = str(self.benzene)
         self.assertEqual(first, second)
+        
+    def test_benzene_coefficients(self):
+        print('test all coefficients')
+        self.assertAlmostEqual(self.benzene.alpha, 0)
+        self.assertAlmostEqual(self.benzene.beta, -1)
+        self.assertAlmostEqual(self.benzene.deloc_energy, -2.0)
+        self.assertAlmostEqual(self.benzene.eigenvalues, 2.0)
+        
+    def test_benzene_lists(self):
+        print('test the coefficients lists of benzene')
         
         
         
