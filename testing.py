@@ -26,7 +26,7 @@ class TestBenzene(unittest.TestCase):
     def setUp(self):
         print('set up Benzene')
 # specify the benzene molecule (or others) as the test resource for the core of code
-# you coud initialize your own molecule but you need to calculate the output and compare with the cod answers
+# you could initialize your own molecule but you need to calculate the output and compare with the code answers
         self.benzene = Molecule("Benzene", np.matrix([]), 6, 6, 3)
         self.benzene.generate_H()
         self.benzene.add_connections([[1, 6]])
@@ -41,7 +41,7 @@ class TestBenzene(unittest.TestCase):
     def tearDown(cls):
         print('tear down Benzene\n')
         
-# check if the information in output of Benzene and calable answer are the same or not
+# check if the information in output of Benzene and calable answers are the same or not
     def test_benzene_str(self):
         print('test the __str__ output of benzene')
         first = self.benzene.__str__()
