@@ -62,15 +62,15 @@ class TestBenzene(unittest.TestCase):
         order = [1.56, 1.65, 1.77, 1.56, 1.65, 1.77]
         for s in range(len(self.benzene.charge_density)):
             first = self.benzene.charge_density[s]
-            second = density[s]
+            second4 = density[s]
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
-            self.assertAlmostEqual(first, second, None, message, delta)
+            self.assertAlmostEqual(first, second4, None, message, delta)
 
             bond = self.benzene.bond_order[s]
-            second0 = order[s]
+            second5 = order[s]
             message0 = 'The bond order elements for testing are not almost equal'
-            self.assertAlmostEqual(bond, second0, None, message0, delta)
+            self.assertAlmostEqual(bond, second5, None, message0, delta)
         
         # this part is a 6*6 matrix or list inside other list so we break it to the basic elements and compare
         eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447], [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
@@ -79,14 +79,14 @@ class TestBenzene(unittest.TestCase):
             second1 = eigenvectors[m]
             for i in range(len(vectors)):  # read first deep elements
                 vec = vectors[i]
-                sec = second1[i]
+                sec1 = second1[i]
                 # convert the separated lists to the integers elements
                 for h in range(len(vec)):
                     v = vec[h]
-                    s = sec[h]
+                    s1 = sec1[h]
                     delta1 = 0.01
                     message1 = 'The eigenvectors elements for testing are not almost equal'
-                    self.assertAlmostEqual(v, s, None, message1, delta1)
+                    self.assertAlmostEqual(v, s1, None, message1, delta1)
 
         self.assertEqual(self.benzene.con, [[1, 6]])
         self.assertEqual(self.benzene.e_per_energy_lvl, [
@@ -122,9 +122,9 @@ class TestButadiene(unittest.TestCase):
 
     def test_butadiene_str(self):
         print('test the __str__ output of butadiene')
-        first = self.butadiene.__str__()
-        second = str(self.butadiene)
-        self.assertEqual(first, second)
+        fir = self.butadiene.__str__()
+        seco = str(self.butadiene)
+        self.assertEqual(fir, seco)
     
     def test_butadiene_coefficients(self):
         print('test all coefficients of butadiene')
@@ -137,19 +137,19 @@ class TestButadiene(unittest.TestCase):
         print('test the coefficients lists of butadiene')
         density = [1, 1, 1, 1]
         for d in range(len(self.butadiene.charge_density)):
-            first = self.butadiene.charge_density[d]
-            second = density[d]
+            firs = self.butadiene.charge_density[d]
+            secon = density[d]
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
-            self.assertAlmostEqual(first, second, None, message, delta)
+            self.assertAlmostEqual(firs, secon, None, message, delta)
         
         bond = [1.89, 1.45, 1.89]
         for z in range(len(self.butadiene.bond_order)):
-            first = self.butadiene.bond_order[z]
-            second = bond[z]
+            orde = self.butadiene.bond_order[z]
+            second0 = bond[z]
             delta = 0.1
             message = 'The bond_order elements for testing are not almost equal'
-            self.assertAlmostEqual(first, second, None, message, delta)
+            self.assertAlmostEqual(orde, second0, None, message, delta)
         
         eigenvectors = [[[0.372], [0.602], [0.602], [0.372]], [[-0.602], [-0.372], [0.372], [0.602]], [[0.602], [-0.372], [-0.372], [0.602]], [[-0.372], [0.602], [-0.602], [0.372]]]
         for v in range(len(self.butadiene.eigenvectors)):  # read each list separately
@@ -161,33 +161,33 @@ class TestButadiene(unittest.TestCase):
                 # convert the separated lists to the integers elements
                 for o in range(len(vec)):
                     v = vec[o]
-                    s = sec[o]
+                    s1 = sec[o]
                     delta1 = 0.01
                     message1 = 'The eigenvectors elements for testing are not almost equal'
-                    self.assertAlmostEqual(v, s, None, message1, delta1)
+                    self.assertAlmostEqual(v, s1, None, message1, delta1)
 
 # to have the separate elements of tuple inside a list we could act like below
         lvl = [(-1.62, 2), (-0.62, 2), (0.62, 0), (1.62, 0)]
         for l in range(len(self.butadiene.e_per_energy_lvl)):
-            first = self.butadiene.e_per_energy_lvl[l]
-            second = lvl[l]
-            for x in range(len(first)):
-                f = first[x]
-                s = second[x]
+            energ = self.butadiene.e_per_energy_lvl[l]
+            second2 = lvl[l]
+            for x in range(len(energ)):
+                en = energ[x]
+                s2 = second2[x]
                 delta = 0.01
                 message = "first and second are not almost equal."
-                self.assertAlmostEqual(f,s, None, message, delta)
+                self.assertAlmostEqual(en, s2, None, message, delta)
         
         multi = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
         for z in range(len(self.butadiene.eigval_multiplicity)):
-            first = self.butadiene.eigval_multiplicity[z]
-            second = multi[z]
-            for g in range(len(first)):
-                f = first[g]
-                s = second[g]
+            eigval = self.butadiene.eigval_multiplicity[z]
+            second3 = multi[z]
+            for g in range(len(eigval)):
+                ei = eigval[g]
+                s3 = second3[g]
                 delta = 0.01
                 message = "first and second are not almost equal."
-                self.assertAlmostEqual(f,s, None, message, delta)
+                self.assertAlmostEqual(ei, s3, None, message, delta)
         
 if __name__ == '__main__':
     unittest.main
