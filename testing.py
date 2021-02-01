@@ -174,9 +174,9 @@ class TestButadiene(unittest.TestCase):
             for x in range(len(first)):
                 f = first[x]
                 s = second[x]
-            delta = 0.01
-            message = "first and second are not almost equal."
-            self.assertAlmostEqual(f,s, None, message, delta)
+                delta = 0.01
+                message = "first and second are not almost equal."
+                self.assertAlmostEqual(f,s, None, message, delta)
         
         multi = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
         for z in range(len(self.butadiene.eigval_multiplicity)):
@@ -185,9 +185,9 @@ class TestButadiene(unittest.TestCase):
             for g in range(len(first)):
                 f = first[g]
                 s = second[g]
-            delta = 0.01
-            message = "first and second are not almost equal."
-            self.assertAlmostEqual(f,s, None, message, delta)
+                delta = 0.01
+                message = "first and second are not almost equal."
+                self.assertAlmostEqual(f,s, None, message, delta)
         
 if __name__ == '__main__':
     unittest.main
