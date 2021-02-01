@@ -167,10 +167,10 @@ class TestButadiene(unittest.TestCase):
                     self.assertAlmostEqual(v, s, None, message1, delta1)
 
 # to have the separate elements of tuple inside a list we could act like below
-        test = [(-1.62, 2), (-0.62, 2), (0.62, 0), (1.62, 0)]
+        lvl = [(-1.62, 2), (-0.62, 2), (0.62, 0), (1.62, 0)]
         for l in range(len(self.butadiene.e_per_energy_lvl)):
             first = self.butadiene.e_per_energy_lvl[l]
-            second = test[l]
+            second = lvl[l]
             for x in range(len(first)):
                 f = first[x]
                 s = second[x]
@@ -178,10 +178,10 @@ class TestButadiene(unittest.TestCase):
             message = "first and second are not almost equal."
             self.assertAlmostEqual(f,s, None, message, delta)
         
-        test = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
+        multi = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
         for z in range(len(self.butadiene.eigval_multiplicity)):
             first = self.butadiene.eigval_multiplicity[z]
-            second = test[z]
+            second = multi[z]
             for g in range(len(first)):
                 f = first[g]
                 s = second[g]
