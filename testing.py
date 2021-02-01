@@ -59,18 +59,17 @@ class TestBenzene(unittest.TestCase):
         print('test the coefficients lists of benzene')
         # creat a loop to check each elements and decrease the decimal parts or Approximate comparison
         density = [1.02, 0.9, 1.08, 1.02, 0.9, 1.08]
-        order = [1.56, 1.65, 1.77, 1.56, 1.65, 1.77]
+        order = [1.58, 1.65, 1.77, 1.58, 1.65, 1.77]
         for s in range(len(self.benzene.charge_density)):
             first = self.benzene.charge_density[s]
             second4 = density[s]
-            delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
-            self.assertAlmostEqual(first, second4, None, message, delta)
+            self.assertAlmostEqual(first, second4, 2, message, None)
 
             bond = self.benzene.bond_order[s]
             second5 = order[s]
             message0 = 'The bond order elements for testing are not almost equal'
-            self.assertAlmostEqual(bond, second5, None, message0, delta)
+            self.assertAlmostEqual(bond, second5, 2, message0, None)
         
         # this part is a 6*6 matrix or list inside other list so we break it to the basic elements and compare
         eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447], [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
