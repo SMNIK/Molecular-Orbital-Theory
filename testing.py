@@ -13,6 +13,7 @@ from Molecule import Molecule, a, b
 I used the Benzene and Butadiene molecules data to test the outputs of 
 Molecule's functions """
 
+
 class TestBenzene(unittest.TestCase):
 
     @classmethod
@@ -37,10 +38,10 @@ class TestBenzene(unittest.TestCase):
         self.benzene.find_charge_density()
         self.benzene.find_bond_order()
 
-    @classmethod
-    def tearDown(cls):
-        print('tear down Benzene\n')
-        
+        @classmethod
+        def tearDown(cls):
+            print('tear down Benzene\n')
+
 # check if the information in output of Benzene and calable answers are the same or not
     def test_benzene_str(self):
         print('test the __str__ output of benzene')
@@ -70,9 +71,10 @@ class TestBenzene(unittest.TestCase):
             second5 = order[s]
             message0 = 'The bond order elements for testing are not almost equal'
             self.assertAlmostEqual(bond, second5, 2, message0, None)
-        
+
         # this part is a 6*6 matrix or list inside other list so we break it to the basic elements and compare
-        eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447], [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
+        eigenvectors = [[[-0.408], [-0.408], [-0.408], [-0.408], [-0.408], [-0.408]], [[-0.577], [-0.289], [0.289], [0.577], [0.289], [-0.289]], [[0.092], [-0.447], [-0.539], [-0.092], [0.447],
+                                                                                                                                                  [0.539]], [[0.577], [-0.289], [-0.289], [0.577], [-0.289], [-0.289]], [[0.062], [-0.528], [0.466], [0.062], [-0.528], [0.466]], [[-0.408], [0.408], [-0.408], [0.408], [-0.408], [0.408]]]
         for m in range(len(self.benzene.eigenvectors)):  # read each list separately
             vectors = self.benzene.eigenvectors[m]
             second1 = eigenvectors[m]
@@ -94,6 +96,8 @@ class TestBenzene(unittest.TestCase):
                          (-2.0, 1), (-1.0, 2), (1.0, 2), (2.0, 1)])
 
 # second class for the second molecule testing
+
+
 class TestButadiene(unittest.TestCase):
 
     @classmethod
@@ -106,7 +110,8 @@ class TestButadiene(unittest.TestCase):
 
     def setUp(self):
         print('set up Butadiene')
-        self.butadiene_H = np.matrix([[a, b, 0, 0], [b, a, b, 0],[0, b, a, b], [0, 0, b, a]])
+        self.butadiene_H = np.matrix(
+            [[a, b, 0, 0], [b, a, b, 0], [0, b, a, b], [0, 0, b, a]])
         self.butadiene = Molecule('Butadiene', self.butadiene_H, 4, 4, 2)
         self.butadiene.set_constants(0, -1)
         self.butadiene.generate_eigen()
@@ -114,7 +119,7 @@ class TestButadiene(unittest.TestCase):
         self.butadiene.energy_level_plot()
         self.butadiene.find_charge_density()
         self.butadiene.find_bond_order()
-    
+
     @classmethod
     def tearDown(cls):
         print('tear down Butadiene\n')
@@ -124,14 +129,16 @@ class TestButadiene(unittest.TestCase):
         fir = self.butadiene.__str__()
         seco = str(self.butadiene)
         self.assertEqual(fir, seco)
-    
+
     def test_butadiene_coefficients(self):
         print('test all coefficients of butadiene')
         self.assertAlmostEqual(self.butadiene.alpha, 0)
         self.assertAlmostEqual(self.butadiene.beta, -1)
-        self.assertAlmostEqual(self.butadiene.deloc_energy, -0.47, None, None, 0.1)
-        self.assertAlmostEqual(self.butadiene.eigenvalues, 1.62, None, None, 0.2)
-        
+        self.assertAlmostEqual(
+            self.butadiene.deloc_energy, -0.47, None, None, 0.1)
+        self.assertAlmostEqual(
+            self.butadiene.eigenvalues, 1.62, None, None, 0.2)
+
     def test_butadiene_lists(self):
         print('test the coefficients lists of butadiene')
         density = [1, 1, 1, 1]
@@ -141,7 +148,7 @@ class TestButadiene(unittest.TestCase):
             delta = 0.1
             message = 'The charge density elements for testing are not almost equal'
             self.assertAlmostEqual(firs, secon, None, message, delta)
-        
+
         bond = [1.89, 1.45, 1.89]
         for z in range(len(self.butadiene.bond_order)):
             orde = self.butadiene.bond_order[z]
@@ -149,8 +156,9 @@ class TestButadiene(unittest.TestCase):
             delta = 0.1
             message = 'The bond_order elements for testing are not almost equal'
             self.assertAlmostEqual(orde, second0, None, message, delta)
-        
-        eigenvectors = [[[0.372], [0.602], [0.602], [0.372]], [[-0.602], [-0.372], [0.372], [0.602]], [[0.602], [-0.372], [-0.372], [0.602]], [[-0.372], [0.602], [-0.602], [0.372]]]
+
+        eigenvectors = [[[0.372], [0.602], [0.602], [0.372]], [[-0.602], [-0.372], [0.372], [0.602]],
+                        [[0.602], [-0.372], [-0.372], [0.602]], [[-0.372], [0.602], [-0.602], [0.372]]]
         for v in range(len(self.butadiene.eigenvectors)):  # read each list separately
             vectors = self.butadiene.eigenvectors[v]
             second1 = eigenvectors[v]
@@ -176,7 +184,7 @@ class TestButadiene(unittest.TestCase):
                 delta = 0.01
                 message = "first and second are not almost equal."
                 self.assertAlmostEqual(en, s2, None, message, delta)
-        
+
         multi = [(-1.62, 1), (-0.62, 1), (0.62, 1), (1.62, 1)]
         for z in range(len(self.butadiene.eigval_multiplicity)):
             eigval = self.butadiene.eigval_multiplicity[z]
@@ -187,6 +195,7 @@ class TestButadiene(unittest.TestCase):
                 delta = 0.01
                 message = "first and second are not almost equal."
                 self.assertAlmostEqual(ei, s3, None, message, delta)
-        
+
+
 if __name__ == '__main__':
     unittest.main
