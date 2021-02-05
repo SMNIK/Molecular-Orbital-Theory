@@ -85,7 +85,19 @@ class TestMolecule(unittest.TestCase):
         self.assertAlmostEqual(Molecule.e_per_eigen_vect(
             self), None, None, None, None)
 
-    def
+    def test_find_nodes(self):
+        print('test find nodes')
+        self.eigenvectors = [[], [], []]
+        self.assertEqual(Molecule.find_nodes(self), [0, 0, 0])
+
+    def test_energy_level_plot(self):
+        print('test energy level plot')
+        self.alpha = 0
+        self.beta = -1
+        self.num_pi_electrons = 4
+        self.eigval_multiplicity = [[-2, 1], [0, 2], [2, 1]]
+        self.name = 'testing'
+        Molecule.energy_level_plot(self)
 
 
 if __name__ == '__main__':
