@@ -99,6 +99,26 @@ class TestMolecule(unittest.TestCase):
         self.name = 'testing'
         Molecule.energy_level_plot(self)
 
+    def test_find_deloc_energy(self):
+        print('test find delocalization energy')
+        self.valid.alpha = 1
+        self.valid.beta = 0
+        self.assertEqual(self.valid.find_deloc_energy(), -4)
+
+    def test_find_charge_density(self):
+        print('test find charge density')
+        self.valid.find_charge_density()
+        dens = [0.0, 0.0, 0.0, 0.0]
+        for z in range(len(self.valid.charge_density)):
+            density = self.valid.charge_density[z]
+            den = dens[z]
+            self.assertAlmostEqual(density, den, 1, None, None)
+
+    def test_find_bond_order(self):
+        print('test find bond order')
+        self.valid.find_bond_order()
+        self.assertEqual(self.valid.bond_order, [1.0, 1.0, 1.0, 1.0])
+
 
 if __name__ == '__main__':
     unittest.main
