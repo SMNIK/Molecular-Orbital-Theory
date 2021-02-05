@@ -55,18 +55,21 @@ class Molecule:
         self.e_per_eigen_vect = []
 
         if type(name) not in [str]:
-            raise TypeError("The name that you entered is not correct, put it inside quotation as a string or be careful to write the correct name")
-        
-        if type(num_pi_electrons) not in [int]: 
-            raise TypeError("The num_pi_electrons that you entered is not correct, the num_pi_electrons should be integers")
-        
-        if type(num_carbons) not in [int]: 
-            raise TypeError("The num_carbons that you entered is not correct, the num_carbons should be integers")
-        
-        if type(num_double_bonds) not in [int]: 
-            raise TypeError("The num_double_bonds that you entered is not correct, the num_double_bonds should be integers")
+            raise TypeError(
+                "The name that you entered is not correct, put it inside quotation as a string or be careful to write the correct name")
 
-        
+        if type(num_pi_electrons) not in [int]:
+            raise TypeError(
+                "The num_pi_electrons that you entered is not correct, the num_pi_electrons should be integers")
+
+        if type(num_carbons) not in [int]:
+            raise TypeError(
+                "The num_carbons that you entered is not correct, the num_carbons should be integers")
+
+        if type(num_double_bonds) not in [int]:
+            raise TypeError(
+                "The num_double_bonds that you entered is not correct, the num_double_bonds should be integers")
+
     def __str__(self):
         """Creat the string represtation for the molecule"""
         return "---" + self.name + "--- \n" + str(self.H) + "\n" \
@@ -156,6 +159,7 @@ class Molecule:
             self.eigenvalues = eig_set[0]
             self.eigenvectors.append(eig_set[1].tolist())
 
+    def e_per_energy_lvl(self):
         # Reset the array which will hold the number of electrons per eigenvalue
         self.e_per_energy_lvl = []
 
@@ -173,6 +177,7 @@ class Molecule:
                     tuple([eig_val, electrons_available]))
                 electrons_available -= electrons_available
 
+    def e_per_eigen_vect(self):
         # Count up the number of electronsassociated with each eigenvector by associating it ith the eigenvalue
         self.e_per_eigen_vect = []
         # Get a temporary copy to work with
@@ -293,7 +298,7 @@ class Molecule:
         self.deloc_energy = smp.N(deloc_energy)    # Set it nicely
 
         return self.deloc_energy
-    
+
         if type(deloc_energy) not in [int, float]:
             raise TypeError("The delocaliozation energy must be a number.")
 

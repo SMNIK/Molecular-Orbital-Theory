@@ -66,7 +66,7 @@ class TestMolecule(unittest.TestCase):
             self.valid.H), '[[ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]\n [ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]]')
 
     def test_e_per_energy_lvl(self):
-        print('test e_per_energy_lvl')
+        print('test electron per energy level')
         self.num_pi_electrons = 4
         self.eigval_multiplicity = []
         self.assertAlmostEqual(Molecule.e_per_energy_lvl(
@@ -77,6 +77,15 @@ class TestMolecule(unittest.TestCase):
         self.valid.delete_connections([])
         self.assertEqual(str(
             self.valid.H), '[[ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]\n [ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]]')
+
+    def test_e_per_eigen_vect(self):
+        print('test electron per eigen vactor')
+        self.test_e_per_eigen_vect = [[3, 6], [4, 8]]
+        self.eigval_eigvect = [[3, 6], [4, 8]]
+        self.assertAlmostEqual(Molecule.e_per_eigen_vect(
+            self), None, None, None, None)
+
+    def
 
 
 if __name__ == '__main__':
