@@ -40,8 +40,30 @@ class TestMolecule(unittest.TestCase):
         print('test set constants')
         Molecule.H = np.matrix([[0, -1], [-1, 0]])
         self.H = np.matrix([])
-        Molecule.set_constants(0, -1)
+        Molecule.set_constants(self, 0, -1)
         self.assertEqual(str(Molecule.H), '[[ 0 -1]\n [-1  0]]')
+
+    def test_generate_H(self):
+        print('test generate_H')
+        self.num_carbons = 4
+        first = str(Molecule.generate_H(self))
+        second = '[[a b 0.0 0.0]\n [b a b 0.0]\n [0.0 b a b]\n [0.0 0.0 b a]]'
+        self.assertEqual(first, second)
+
+    def test_generate_eigen(self):
+        print('test generate_eigen')
+        self.alpha = 0
+        self.beta = -1
+        self.H = [[0, -1, 0, 0], [-1, 0, -1, 0], [0, -1, 0, -1], [0, 0, -1, 0]]
+        self.valid.generate_eigen()
+        self.assertAlmostEqual(Molecule.generate_eigen(
+            self), None, None, None, None)
+
+    def test_add_connections(self):
+        print('test add connections')
+        self.valid.add_connections([])
+        self.assertEqual(str(
+            self.valid.H), '[[ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]\n [ 0. -1.  0. -1.]\n [-1.  0. -1.  0.]]')
 
 
 if __name__ == '__main__':
