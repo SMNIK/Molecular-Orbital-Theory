@@ -56,8 +56,7 @@ class TestMolecule(unittest.TestCase):
         self.beta = -1
         self.H = [[0, -1, 0, 0], [-1, 0, -1, 0], [0, -1, 0, -1], [0, 0, -1, 0]]
         self.valid.generate_eigen()
-        self.assertAlmostEqual(Molecule.generate_eigen(
-            self), None, None, None, None)
+        self.assertAlmostEqual(self.valid.generate_eigen(), None, None, None, None)
 
     def test_add_connections(self):
         print('test add connections')
